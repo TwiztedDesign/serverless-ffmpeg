@@ -1,12 +1,15 @@
 # An example configuration
 
-region: us-east-1
+region: us-west-2
 memorySize: 1024
 stage: dev
 
 # Both these buckets will be created
-source_bucket: ffmpeg-input-bucket-abc-123
-destination_bucket: ffmpeg-output-bucket-abc-123
+source_bucket: videoflow-ffmpeg-input
+destination_bucket: videoflow-ffmpeg-output
 
 # This will transcode audio into hls format
-ffmpeg_params: "-b:a 64k -f hls -hls_time 10.0 -hls_list_size 0"
+#ffmpeg_params: "-b:a 64k -f hls -hls_time 10.0 -hls_list_size 0"
+
+# Mp4 to hls
+ffmpeg_params: "-profile:v baseline -level 3.0 -s 640x360 -start_number 0 -hls_time 10 -hls_list_size 0 -f hls"

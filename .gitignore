@@ -10,3 +10,4 @@ jspm_packages
 # Personal
 .DS_Store
 demo
+./idea

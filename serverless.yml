@@ -66,6 +66,8 @@ functions:
       - s3:
           bucket: ${self:custom.source_bucket} # This will create the source bucket
           event: s3:ObjectCreated:*
+          rules:
+            - suffix: .mp4
 
 
 resources:
