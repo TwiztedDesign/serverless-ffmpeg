@@ -11,7 +11,7 @@ export const main = async (event, context, callback) => {
   try {
     const destPath = await download(bucket, key)
     await ffprobe(destPath)
-    const outputPath = await ffmpeg(destPath, 'm3u', getFfmpegParameters())
+    const outputPath = await ffmpeg(destPath, 'm3u8', getFfmpegParameters())
     await uploadFolder(getDestinationBucket(), key, outputPath)
   } catch (error) {
     callback(error)
