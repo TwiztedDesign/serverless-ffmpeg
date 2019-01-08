@@ -12,4 +12,7 @@ destination_bucket: videoflow-ffmpeg-output
 #ffmpeg_params: "-b:a 64k -f hls -hls_time 10.0 -hls_list_size 0"
 
 # Mp4 to hls
-ffmpeg_params: "-profile:v baseline -level 3.0 -s 640x360 -start_number 0 -hls_time 10 -hls_list_size 0 -f hls"
+ffmpeg_params: "-profile:v baseline -level 3.0 -start_number 0 -hls_time 10 -hls_list_size 0 -f hls"
+
+
+#ffmpeg -hide_banner -vf -c:a aac -ar 48000 -c:v h264 -profile:v main -crf 20 -sc_threshold 0 -g 48 -keyint_min 48 -hls_time 4 -hls_playlist_type vod -b:v 5000k -maxrate 5350k -bufsize 7500k -b:a 192k -hls_segment_filename [NAME]_1080p_%05d.ts [NAME]_1080p.m3u8
